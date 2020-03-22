@@ -33,7 +33,6 @@ class CampsiteInfo extends Component {
 						</p>
 					</div>
 				);
-				
 			});
 			return (
 				<div className="col-md-5 m-1">
@@ -49,9 +48,11 @@ class CampsiteInfo extends Component {
 		const campsite = this.props.campsite;
 		if (campsite) {
 			return (
-				<div className="row">
-					{this.renderCampsite(campsite)}
-					{this.renderComments(campsite.comments)}
+				<div className="container">
+					<div className="row">
+						{this.renderCampsite(campsite)}
+						{this.renderComments(campsite.comments)}
+					</div>
 				</div>
 			);
 		}
