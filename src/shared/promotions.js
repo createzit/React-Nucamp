@@ -1,5 +1,6 @@
-import * as ActionTypes from './ActionTypes';
-export const Promotions = (
+import * as ActionTypes from '../redux/ActionTypes';
+
+export const PROMOTIONS = (
 	state = {
 		isLoading: true,
 		errMess: null,
