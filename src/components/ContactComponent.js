@@ -1,48 +1,52 @@
-import React, { Component } from 'react';
-import { Breadcrumb, BreadcrumbItem, Button, Label, Col, Row } from 'reactstrap';
-import { Link } from 'react-router-dom';
-import { Control, Errors, Form, actions} from "react-redux-form";
+import React, { Component } from "react";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  Button,
+  Label,
+  Col,
+  Row
+} from "reactstrap";
+import { Link } from "react-router-dom";
+import { Control, Errors, Form, actions } from "react-redux-form";
 
 const required = val => val && val.length;
-const maxLength = len => val => !val || (val.length <= len);
-const minLength = len => val => val && (val.length >= len);
+const maxLength = len => val => !val || val.length <= len;
+const minLength = len => val => val && val.length >= len;
 const isNumber = val => !isNaN(+val);
 const validEmail = val => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
-
 class Contact extends Component {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.state = {
-			firstName: '',
-			lastName: '',
-			phoneNum: '',
-			email: '',
-			agree: false,
-			contactType: 'By Phone',
-            feedback: '',
-            touched: {
-                firstName: false,
-                lastName: false,
-                phoneNum: false,
-                email: false
-            }
-		};
+    this.state = {
+      firstName: "",
+      lastName: "",
+      phoneNum: "",
+      email: "",
+      agree: false,
+      contactType: "By Phone",
+      feedback: "",
+      touched: {
+        firstName: false,
+        lastName: false,
+        phoneNum: false,
+        email: false
+      }
+    };
 
-		this.handleSubmit = this.handleSubmit.bind(this);
-    }
-    
-	handleSubmit(values) {
-		console.log('Current state is: ' + JSON.stringify(values));
-		alert('Current state is: ' + JSON.stringify(values));
-		this.props.resetFeedbackForm();
-	
-	}
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-    render() {
-        
-		return (
+  handleSubmit(values) {
+    console.log("Current state is: " + JSON.stringify(values));
+    alert("Current state is: " + JSON.stringify(values));
+    this.props.resetFeedbackForm();
+  }
+
+  render() {
+    return (
       <div className="container">
         <div className="row">
           <div className="col">
@@ -264,7 +268,7 @@ class Contact extends Component {
         </div>
       </div>
     );
-	}
+  }
 }
 
 export default Contact;
